@@ -24,7 +24,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
-      redirect_to @reservation, notice: "Reservation was successfully created."
+      redirect_to @reservation, notice: "予約が完了しました。"
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class ReservationsController < ApplicationController
   # PATCH/PUT /reservations/1
   def update
     if @reservation.update(reservation_params)
-      redirect_to @reservation, notice: "Reservation was successfully updated."
+      redirect_to @reservation, notice: "予約の変更が完了しました。"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class ReservationsController < ApplicationController
   # DELETE /reservations/1
   def destroy
     @reservation.destroy
-    redirect_to reservations_url, notice: "Reservation was successfully destroyed."
+    redirect_to reservations_url, notice: "予約の取り消しが完了しました。"
   end
 
   private
